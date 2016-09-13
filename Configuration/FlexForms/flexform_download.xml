@@ -1,0 +1,127 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Einstellungen</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.order>
+						<TCEforms>
+							<label>Sortieren nach</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Wie im Datensatz</numIndex>
+										<numIndex index="1">CType</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Dateigröße</numIndex>
+										<numIndex index="1">filesize</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Titel / Dateiname</numIndex>
+										<numIndex index="1">title</numIndex>
+									</numIndex>
+								</items>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.order>
+
+					<settings.direction>
+						<TCEforms>
+							<label>Sortierungs-Richtung</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">aufsteigend</numIndex>
+										<numIndex index="1">asc</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Absteigend</numIndex>
+										<numIndex index="1">desc</numIndex>
+									</numIndex>
+								</items>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.direction>
+					
+					<settings.icon>
+						<TCEforms>
+							<label>Zeige Icon</label>
+							<config>
+								<type>check</type>
+								<value>1</value>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.icon>
+					
+					<settings.thumbnail>
+						<TCEforms>
+							<label>Zeige Vorschaubild (wenn die Datei ein Bild ist und 'Zeige Icon' ebenfalls aktiviert ist)</label>
+							<config>
+								<type>check</type>
+								<value>1</value>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.thumbnail>
+					
+					<settings.description>
+						<TCEforms>
+							<label>Zeige Beschreibung</label>
+							<config>
+								<type>check</type>
+								<value>1</value>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.description>
+					
+					<settings.size>
+						<TCEforms>
+							<label>Zeige Dateigröße</label>
+							<config>
+								<type>check</type>
+								<value>1</value>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.size>
+					
+					<settings.suffix>
+						<TCEforms>
+							<label>Zeige Datei-Endung</label>
+							<config>
+								<type>check</type>
+								<value>1</value>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.suffix>
+					
+					<settings.mime>
+						<TCEforms>
+							<label>Zeige Datei-Typ (Mime)</label>
+							<config>
+								<type>check</type>
+								<value>1</value>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.mime>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

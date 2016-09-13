@@ -1,0 +1,70 @@
+.lbr-ce-download.lbr-ce-download-layout-2 {
+  overflow-x: auto;
+}
+
+.lbr-ce-download {
+	
+	table {
+	  min-width: 100%;
+	  
+	  td {
+		  text-align: left;
+		  vertical-align: middle;
+		  padding: .5em 0;
+		  
+		  border-top: 1px solid rgb(150,150,150);
+		  border-top: 1px solid rgba(255,255,255,.5);
+		  
+			&.icon {
+				width: 32px;
+				padding-right: .5em;
+				padding-left: .5em;
+				img {
+					width: 32px;
+				}
+			}
+			
+			&.meta,
+			&.link {
+			  width: 1%;
+			  white-space: nowrap;
+			}
+			
+			&.link a {
+				display: block;
+				padding: 0 .5em;
+			}
+			
+			&.title h3 {
+				font-size: 1em;
+				font-weight: 700;
+				margin-bottom: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+	
+	tr {
+		//.opacity(.8);
+		
+		&:hover {
+			//.opacity(1);
+			
+			td {
+				background: rgba(255,255,255,.3);
+			}
+		}
+	}
+	
+	tr:first-child td {
+  	border-top: none;
+  }
+	
+	span.extension {
+	  text-transform: uppercase;
+	}
+}
+

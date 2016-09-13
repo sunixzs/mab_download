@@ -1,0 +1,111 @@
+plugin.tx_mabdownload {
+	view {
+		templateRootPaths.0 = {$plugin.tx_mabdownload.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_mabdownload.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_mabdownload.view.layoutRootPath}
+	}
+	
+	settings {
+		downloadTypeNum = {$plugin.tx_mabdownload.settings.downloadTypeNum}
+		
+		# Definition of several icon-sets
+		# Only the suffix/extenstion and the icon-filename
+		
+		icons_files {
+			standard = file.gif
+			xls = excel-file.gif
+			exe = exe-file.gif
+			swf = flash-file.gif
+			ai = illustrator-file.gif
+			indd = indesign-file.gif
+			mp3 = mp3-music-file.gif
+			wav = mp3-music-file.gif
+			doc = ms-word.gif
+			docx = ms-word.gif
+			psd = photoshop-file.gif
+			mov = quicktime-movie-file.gif
+			txt = text-file.gif
+			wmv = window-media-file.gif
+			wma = window-media-file.gif
+			zip = zip-file.gif  
+		}
+		
+		icons_white_64x64 {
+			standard = standard.png
+			ai = ai.png
+			wav = audio.png
+			aif = audio.png
+			aiff = audio.png
+			snd = audio.png
+			avi = avi.png
+			csv = csv.png
+			dll = dll.png
+			dmg = dmg.png
+			doc = doc.png
+			docx = doc.png
+			exe = exe.png
+			flv = flv.png
+			gif = gif.png
+			tiff = image.png
+			jpg = jpg.png
+			jpeg = jpg.png
+			mov = mov.png
+			mp3 = mp3.png
+			mpg = mpg.png
+			ogg = ogg.png
+			pdf = pdf.png
+			png = png.png
+			ppt = ppt.png
+			psd = psd.png
+			rar = rar.png
+			txt = text.png
+			rtf = text.png
+			ogv = video.png
+			mp4 = video.png
+			wma = wma.png
+			xls = xls.png
+			zip = zip.png
+		}
+		
+		icons_black_64x64 < .icons_white_64x64
+		
+		# path to the icons-directory
+		iconsPath = typo3conf/ext/mab_download/Resources/Public/Icons/black_64x64/
+		#iconsPath = typo3conf/ext/mab_download/Resources/Public/Icons/white_64x64/
+		#iconsPath = typo3conf/ext/mab_download/Resources/Public/Icons/Files/
+		
+		# icon-set t use
+		icons < .icons_black_64x64
+	}
+}
+
+
+# Plugin to show the dayItemsOverview of the calendar
+mab_download_downloadAction = PAGE
+mab_download_downloadAction {
+	typeNum = {$plugin.tx_mabdownload.settings.downloadTypeNum}
+	config {
+		disableAllHeaderCode = 1
+		xhtml_cleaning = 0
+		admPanel = 0
+		#additionalHeaders = Content-type: text/plain
+		additionalHeaders {
+			10 {
+				header = Content-type: text/plain
+			}
+		}
+		no_cache = 1
+	}
+	
+	10 = USER
+	10 {
+		userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+		extensionName = MabDownload
+		pluginName = Download
+		vendorName = MAB
+		controller = Download
+		switchableControllerActions.Download.1 = download
+		view < plugin.tx_mabdownload.view
+		settings < plugin.tx_mabdownload.settings
+	}
+}

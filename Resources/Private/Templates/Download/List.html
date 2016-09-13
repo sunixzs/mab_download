@@ -1,0 +1,32 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:flashMessages />
+	
+	<f:if condition="{files -> f:count()}">
+		<ul class="files">
+			<f:for each="{files}" as="file">
+				<li class="file"><f:render section="File" arguments="{_all}" /></li>
+			</f:for>
+		</ul>
+	</f:if>
+</f:section>
+
+<f:section name="File">
+	<f:link.action action="download" pageType="{settings.downloadTypeNum}" arguments="{file:file.key}">
+		<f:if condition="{settings.icon}">
+			<f:if condition="{file.createThumbnail}">
+				<f:then>
+					<span class="icon"><f:image src="{file.publicUrl}" maxWidth="64" maxHeight="64" alt="{file.title}" /></span>
+				</f:then>
+				<f:else>
+					<span class="icon"><f:image src="{file.icon}" maxWidth="64" maxHeight="64" alt="{file.title}" /></span>
+				</f:else>
+			</f:if>
+		</f:if>
+		<span class="title">{file.title}</span>
+		<f:if condition="{file.metaList}"><span class="meta">{file.metaList -> f:format.raw()}</span></f:if>
+		<f:if condition="{settings.description} && {file.description}"><span class="description">{file.description -> f:format.nl2br()}</span></f:if>
+	</f:link.action>
+</f:section>
